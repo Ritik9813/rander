@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vedic Kundli Details</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #f9f9f9;
+            padding: 30px;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            color: #4a148c;
+        }
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        .tab-button {
+            background: #e0e0e0;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+            cursor: pointer;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+        .tab-button.active {
+            background: #4a148c;
+            color: #fff;
+        }
+        .tab-content {
+            display: none;
+            max-width: 900px;
+            margin: 20px auto;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 12px rgba(0,0,0,0.1);
+            padding: 20px;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .planet, .item {
+            margin-bottom: 10px;
+        }
+        .label {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<h1>🧘‍♂️ Your Vedic Kundli Details</h1>
+
+<div class="tabs">
+    <button class="tab-button active" onclick="openTab('tab1')">Planets</button>
+    <button class="tab-button" onclick="openTab('tab2')">Zodiac Signs</button>
+    <button class="tab-button" onclick="openTab('tab3')">Nakshatras</button>
+    <button class="tab-button" onclick="openTab('tab4')">Houses</button>
+    <button class="tab-button" onclick="openTab('tab5')">Yoga & Dosha</button>
+    <button class="tab-button" onclick="openTab('tab6')">Predictions</button>
+</div>
+
+<!-- Tab 1: Planetary Positions -->
+<div id="tab1" class="tab-content active">
+    {% for planet in planetary_positions %}
+    <div class="planet">
+        <strong>{{ planet.name }}:</strong> {{ planet.position }}°, in {{ planet.rashi }}, House {{ planet.house }}
+    </div>
+    {% endfor %}
+</div>
+
+<!-- Tab 2: Zodiac Signs -->
+<div id="tab2" class="tab-content">
+    {% for planet in planetary_positions %}
+    <div class="item">
+        <strong>{{ planet.name }}:</strong> Zodiac Sign = {{ planet.rashi }}, Degrees in Sign = {{ planet.degree_in_sign }}°
+    </div>
+    {% endfor %}
+</div>
+
+<!-- Tab 3: Nakshatras -->
+<div id="tab3" class="tab-content">
+    {% for planet in planetary_positions %}
+    <div class="item">
+        <strong>{{ planet.name }}:</strong> Nakshatra = {{ planet.nakshatra }} (Pada {{ planet.pada }})
+    </div>
+    {% endfor %}
+</div>
+
+<!-- Tab 4: House Positions -->
+<div id="tab4" class="tab-content">
+    {% for planet in planetary_positions %}
+    <div class="item">
+        <strong>{{ planet.name }}:</strong> House = {{ planet.house }}
+    </div>
+    {% endfor %}
+</div>
+
+<!-- Tab 5: Yogas and Doshas -->
+<div id="tab5" class="tab-content">
+    {% for planet in planetary_positions %}
+    <div class="item">
+        <strong>{{ planet.name }}:</strong> {{ planet.benefit }}
+    </div>
+    {% endfor %}
+</div>
+
+<!-- Tab 6: Predictions -->
+<div id="tab6" class="tab-content">
+    {% for planet in planetary_positions %}
+    <div class="item">
+        <strong>{{ planet.name }}:</strong> {{ planet.future }}
+    </div>
+    {% endfor %}
+</div>
+
+<script>
+    function openTab(tabId) {
+        const tabs = document.querySelectorAll('.tab-content');
+        const buttons = document.querySelectorAll('.tab-button');
+
+        tabs.forEach(tab => tab.classList.remove('active'));
+        buttons.forEach(btn => btn.classList.remove('active'));
+
+        document.getElementById(tabId).classList.add('active');
+        event.target.classList.add('active');
+    }
+</script>
+
+</body>
+</html>

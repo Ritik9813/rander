@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planetary and House Details</title>
+</head>
+<body>
+    <h1>Planetary and House Details on the Day of Birth</h1>
+    
+    {% if planetary_positions %}
+        <table border="1">
+            <tr>
+                <th>Planet</th>
+                <th>Position</th>
+                <th>Zodiac Sign</th>
+                <th>Degree in Sign</th>
+                <th>Nakshatra</th>
+                <th>Pada</th>
+                <th>House</th>
+                <th>Future Predictions</th>
+                <th>Benefit</th>
+            </tr>
+            {% for planet in planetary_positions %}
+                <tr>
+                    <td>{{ planet.name }}</td>
+                    <td>{{ planet.position }}°</td>
+                    <td>{{ planet.rashi }}</td>
+                    <td>{{ planet.degree_in_sign }}°</td>
+                    <td>{{ planet.nakshatra }}</td>
+                    <td>{{ planet.pada }}</td>
+                    <td>House {{ planet.house }}</td>
+                    <td>{{ planet.future }}</td>
+                    <td>{{ planet.benefit }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>No data available. Please input your birth details.</p>
+    {% endif %}
+</body>
+</html>

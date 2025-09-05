@@ -1,0 +1,107 @@
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2 {
+    color: #4CAF50;
+}
+
+h1 {
+    text-align: center;
+    padding-top: 20px;
+}
+
+h2 {
+    margin-top: 30px;
+    text-align: center;
+}
+
+/* Form styling */
+form {
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 8px;
+    display: inline-block;
+}
+
+input[type="text"], input[type="date"], input[type="time"] {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Error message */
+.error {
+    color: red;
+    text-align: center;
+    font-size: 16px;
+}
+
+/* Table styling */
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+table th, table td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+table th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Go back link */
+a {
+    text-decoration: none;
+    color: #4CAF50;
+    font-weight: bold;
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+}
+
+a:hover {
+    color: #45a049;
+}
