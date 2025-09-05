@@ -1,17 +1,7 @@
-# Core async AWS library
+Flask==2.3.3
 aiobotocore==2.9.0
-
-# AWS SDK
 boto3==1.28.0
-
-# HTTP client
 aiohttp==3.8.6
-
-# Flask framework
-Flask==2.3.4
-
-# Other common dependencies you might need
 requests==2.31.0
 numpy==1.27.4
 pandas==2.1.1
-scipy==1.11.1
